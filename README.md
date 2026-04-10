@@ -1,5 +1,39 @@
 *Clonado de aerhedai/python-api-template con algunos archivos eliminados*
 
+# Evaluación 1 Ingeniería DevOps
+
+Como metodología de trabajo, hemos implementado *GitFlow*, una estrategia de ramificación que organiza el desarrollo en ramas de Producción, Desarrollo, Nuevas Funcionalidades, Preparación de Versiones y Correcciones Urgentes. Consideramos apropiada esta metodología para desacoplar, de forma estructurada, cada etapa del desarrollo de software; la rama de producción debe mantenerse *separada* de las funcionalidades experimentales.
+
+### Naming de Ramas
+
+main: La rama principal, en la cual vive el código desplegable.
+develop: Desarrollo. Funcionalidades finalizadas, pero pendientes a revisión.
+feature/xyz: Funcionalidades individuales en desarrollo. Incompletas, incluso rotas.
+release/xyz: Preparación de versiones. Se revisan las nuevas funcionalidades para asegurar la correcta interacción entre componentes.
+hotfix/xyz: Correcciones urgentes al código desplegable.
+
+### Flujo de Pull Requests
+
+```
+
+feature/abc
+     |
+     v          |--> release/v123 --|                    |-- hotfix/xyz
+  develop --PR--|                   |--PR--> main <--PR--|
+     ^          |--> release/v121 --|                    |-- hotfix/abc
+     |
+feature/xyz
+
+```
+
+### Estrategias de Revisión
+
+Actualmente, se implementa GitHub Actions. Por cada push en la rama develop, y cada pull request en la rama main, se ejecutarán automáticamente las pruebas definidas en el directorio "tests" del proyecto.
+
+---
+
+*README.md Original*
+
 # Python API Boilerplate
 
 A ready-to-use, Dockerized FastAPI boilerplate for building scalable and maintainable Python APIs quickly. This boilerplate provides a modular folder structure, logging, routing, and example code to get you started with building your own APIs efficiently.
