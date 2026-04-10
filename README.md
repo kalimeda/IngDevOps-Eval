@@ -30,6 +30,11 @@ feature/xyz
 
 Actualmente, se implementa GitHub Actions. Por cada push en la rama develop, y cada pull request en la rama main, se ejecutarán automáticamente las pruebas definidas en el directorio "tests" del proyecto.
 
+### Buenas Prácticas
+
+- Respetar el Naming de las ramas; no crear ramas como "pedrito". Toda rama feature y hotfix debe describir el trabajo que se está llevando a cabo dentro de ella.
+- Los mensajes de commit deben ser breves y descriptivos. Ej. "Refactorizado modelo Personas" - NUNCA "Cambios pequeños" o "Código mejorado"
+
 ---
 
 *README.md Original*
