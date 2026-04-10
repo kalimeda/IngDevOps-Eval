@@ -6,11 +6,11 @@ Como metodología de trabajo, hemos implementado *GitFlow*, una estrategia de ra
 
 ### Naming de Ramas
 
-main: La rama principal, en la cual vive el código desplegable.
-develop: Desarrollo. Funcionalidades finalizadas, pero pendientes a revisión.
-feature/xyz: Funcionalidades individuales en desarrollo. Incompletas, incluso rotas.
-release/xyz: Preparación de versiones. Se revisan las nuevas funcionalidades para asegurar la correcta interacción entre componentes.
-hotfix/xyz: Correcciones urgentes al código desplegable.
+- main: La rama principal, en la cual vive el código desplegable.
+- develop: Desarrollo. Funcionalidades finalizadas, pero pendientes a revisión.
+- feature/xyz: Funcionalidades individuales en desarrollo. Incompletas, incluso rotas.
+- release/xyz: Preparación de versiones. Se revisan las nuevas funcionalidades para asegurar la correcta interacción entre componentes.
+- hotfix/xyz: Correcciones urgentes al código desplegable.
 
 ### Flujo de Pull Requests
 
