@@ -1,0 +1,6 @@
+services:
+  ingdevopseval:
+    image: ingdevopseval
+    build:
+      context: .
+      dockerfile: ./Dockerfile
