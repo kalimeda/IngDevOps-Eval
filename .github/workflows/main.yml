@@ -61,7 +61,9 @@ jobs:
       env:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
       run: snyk auth $SNYK_TOKEN
-
+    
+    - name: Snyk test java dependencies
+      run: snyk test --severity-thresold=high
 
     - name: Generate Snyk JSON Report
       if: always()
