@@ -79,40 +79,5 @@ jobs:
       with:
         name: snyk-report
         path: snyk-report.json
-#=====================================JACOCO REPORT=======================================
 
-  jacoco-report:
-    name: Run Test with jaCoCO
-    runs-on: ubuntu-latest
-    needs: snyk-scan
-
-    steps: 
-    #CHECKOUT DE REPOSITORIO
-
-    - name: Checkout code
-      uses: actions/checkout@v4
-    
-    # CONFIGURAR JDK
-    - name: Set up Py
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.12'
-    # CACHE DEPENDENCIAS MAVEN
-    - name: Cache Maven dependencies
-      uses: actions/cache@v4
-      with:
-        path: ~/.m2
-        key: ${{ runner.os  }}-m2-${{ hashFiles('**/pom.xml')  }}
-        restore-keys: |
-          ${{ runner.os }}-m2
-    #CONTRUIR PROYECTO Y EJECUTAR TEST
-    - name: Build and Test
-      run: mvn clean verify
-
-    #PUBLICAR COBERTURA DE JACOCO
-    - name: Upload JaCoCo Report
-      uses: actions/upload-artifact@v4
-      with:
-        name: jacoco-report
-        path: target/site/jacoco/
 
