@@ -188,3 +188,22 @@ MIT License. Feel free to use and modify.
 Pull requests welcome! Open an issue for feature requests or bugs.
 
 ---
+
+# Evaluación 2 Ingeniería DevOps
+
+## Descripción General
+A este repositorio le hemos integrado un pipeline para garantizar la seguridad y calidad del proyecto, ya que este revisa incoherencias o errores que podría afectar negativamente el mismo antes de que se suban los cambios.
+
+---
+
+## 🛠️ Arquitectura del Pipeline y Etapas
+
+El pipeline se divide en tres etapas las cuales sería test, docker-build y snyk-scan:
+
+1. **test:** * ejecuta prueba automatizadas con pytest para verificar que las funcionalidades no rompan el comportamiento existente del código.
+2. **docker-build:**
+   * Cosntruye una imagen docker de forma automatica para asegurarse de que el si el programa funciona en la maquina de el programador, asi tambien vaya bien en la de otro usuario que agarre el repo.
+3. **snyk-scan:**
+   * Revisa que las dependencias instaladas, bloquea el proceso si encuentra fallos graves y genera un reporte Snyk en fomrato JSON como artefacto.
+
+---
