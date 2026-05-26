@@ -48,11 +48,12 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    - name: Set up JDK 17
-      uses: actions/setup-java@v4
+    - name: Set up Py
+      uses: actions/setup-python@v5
       with:
-        distribution: 'temurin'
-        java-version: '17'
+        python-version: '3.12'
+    
+    - run: pip install -r requirements.txt        
 
     - name: install Snyk CLI
       run: sudo npm install -g snyk
@@ -61,7 +62,9 @@ jobs:
       env:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
       run: snyk auth $SNYK_TOKEN
-
+    
+    - name: Snyk test java dependencies
+      run: snyk test --severity-thresold=high
 
     - name: Generate Snyk JSON Report
       if: always()
