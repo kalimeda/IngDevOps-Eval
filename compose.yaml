@@ -1,6 +1,7 @@
 services:
-  ingdevopseval:
-    image: ingdevopseval
+  api:
     build:
       context: .
-      dockerfile: ./Dockerfile
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
