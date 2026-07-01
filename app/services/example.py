@@ -1,2 +1,2 @@
 def get_message() -> str:
-    return "Mensaje de ejemplo"
+    return "Mensaje de ejemplo 2"
