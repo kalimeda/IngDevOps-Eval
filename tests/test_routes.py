@@ -6,4 +6,4 @@ client = TestClient(app)
 def test_read_example():
     response = client.get("/example/")
     assert response.status_code == 200
-    assert response.json() == {"message": "Hello from the service layer!"}
+    assert response.json() == {"message": "Mensaje de ejemplo"}
